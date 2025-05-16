@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edad de Mateo Antivero</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap"
+    />
+    <style>
+      :root {
+        --primary-color: #ff9aa2; /* Rosa suave */
+        --secondary-color: #ffdac1; /* Melocotón claro */
+        --accent-color: #b5ead7; /* Verde menta */
+        --accent-color2: #c7ceea; /* Lavanda */
+        --background-color: #fff8f0; /* Crema suave */
+        --text-color: #5d576b; /* Púrpura oscuro */
+        --light-text: #8e7f9d; /* Púrpura claro */
+        --card-bg: #ffffff;
+        --shadow: 0 8px 20px rgba(255, 154, 162, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 218, 193, 0.3) 10%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 90% 30%,
+            rgba(181, 234, 215, 0.3) 15%,
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 30% 70%,
+            rgba(199, 206, 234, 0.3) 12%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 154, 162, 0.3) 8%,
+            transparent 15%
+          );
+        background-size: 100% 100%;
+        background-attachment: fixed;
+      }
+
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color2)
+        );
+        color: white;
+        padding: 1.8rem 1rem;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        box-shadow: var(--shadow);
+        z-index: 100;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      h1 {
+        font-family: "Baloo 2", cursive;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        letter-spacing: 0.5px;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 400;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2.5rem 1rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Elementos decorativos flotantes */
+      .floating {
+        position: absolute;
+        z-index: -1;
+        animation: float 6s ease-in-out infinite;
+        opacity: 0.7;
+      }
+
+      .balloon1 {
+        top: 10%;
+        left: 5%;
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        animation-delay: 0s;
+      }
+
+      .balloon2 {
+        top: 15%;
+        right: 10%;
+        font-size: 3rem;
+        color: var(--accent-color);
+        animation-delay: 1s;
+      }
+
+      .star1 {
+        bottom: 20%;
+        left: 8%;
+        font-size: 2rem;
+        color: var(--accent-color2);
+        animation-delay: 2s;
+      }
+
+      .star2 {
+        bottom: 15%;
+        right: 8%;
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        animation-delay: 3s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(5deg);
+        }
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+
+      .counter-container {
+        background-color: var(--card-bg);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 900px;
+        position: relative;
+        overflow: hidden;
+        border: 8px solid white;
+      }
+
+      .counter-container::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--secondary-color),
+          var(--accent-color),
+          var(--accent-color2)
+        );
+        z-index: -1;
+        filter: blur(20px);
+        opacity: 0.15;
+      }
+
+      .counter-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--text-color);
+        font-size: 1.6rem;
+        font-family: "Baloo 2", cursive;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .counter-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 10px;
+      }
+
+      .counter-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.8rem;
+      }
+
+      .counter-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.2rem 0.8rem;
+        border-radius: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .counter-item:nth-child(1) {
+        background-color: rgba(255, 154, 162, 0.1);
+        border: 2px dashed var(--primary-color);
+      }
+
+      .counter-item:nth-child(2) {
+        background-color: rgba(255, 218, 193, 0.1);
+        border: 2px dashed var(--secondary-color);
+      }
+
+      .counter-item:nth-child(3) {
+        background-color: rgba(181, 234, 215, 0.1);
+        border: 2px dashed var(--accent-color);
+      }
+
+      .counter-item:nth-child(4) {
+        background-color: rgba(199, 206, 234, 0.1);
+        border: 2px dashed var(--accent-color2);
+      }
+
+      .counter-item:nth-child(5) {
+        background-color: rgba(255, 154, 162, 0.1);
+        border: 2px dashed var(--primary-color);
+      }
+
+      .counter-item:nth-child(6) {
+        background-color: rgba(255, 218, 193, 0.1);
+        border: 2px dashed var(--secondary-color);
+      }
+
+      .counter-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .counter-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .counter-value {
+        font-size: 2.8rem;
+        font-weight: bold;
+        font-family: "Baloo 2", cursive;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .counter-item:nth-child(1) .counter-value {
+        color: var(--primary-color);
+      }
+      .counter-item:nth-child(2) .counter-value {
+        color: #ff9a76;
+      }
+      .counter-item:nth-child(3) .counter-value {
+        color: #88b04b;
+      }
+      .counter-item:nth-child(4) .counter-value {
+        color: #6b5b95;
+      }
+      .counter-item:nth-child(5) .counter-value {
+        color: #f06292;
+      }
+      .counter-item:nth-child(6) .counter-value {
+        color: #ffa000;
+      }
+
+      .counter-value.changed {
+        animation: pulse 0.5s ease-in-out;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .counter-label {
+        font-size: 1rem;
+        color: var(--light-text);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--accent-color2)
+        );
+        color: white;
+        font-size: 0.95rem;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+      }
+
+      .heart {
+        display: inline-block;
+        color: var(--primary-color);
+        animation: heartbeat 1.5s infinite;
+        margin: 0 5px;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+        75% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .counter-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .counter-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .counter-value {
+          font-size: 2.5rem;
+        }
+
+        .counter-container {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Edad de Mateo Antivero</h1>
+      <p class="subtitle">Nacido el 16/04/2025 – 15:30</p>
+    </header>
+
+    <main>
+      <!-- Elementos decorativos flotantes -->
+      <div class="floating balloon1">🎈</div>
+      <div class="floating balloon2">🎈</div>
+      <div class="floating star1">⭐</div>
+      <div class="floating star2">✨</div>
+
+      <div class="counter-container">
+        <h2 class="counter-title">Tiempo transcurrido desde su nacimiento</h2>
+        <div class="counter-grid">
+          <div class="counter-item">
+            <div class="counter-icon">🎂</div>
+            <div id="years" class="counter-value">0</div>
+            <div class="counter-label">Años</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-icon">📅</div>
+            <div id="months" class="counter-value">0</div>
+            <div class="counter-label">Meses</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-icon">🌞</div>
+            <div id="days" class="counter-value">0</div>
+            <div class="counter-label">Días</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-icon">⏰</div>
+            <div id="hours" class="counter-value">0</div>
+            <div class="counter-label">Horas</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-icon">⏱️</div>
+            <div id="minutes" class="counter-value">0</div>
+            <div class="counter-label">Minutos</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-icon">⏲️</div>
+            <div id="seconds" class="counter-value">0</div>
+            <div class="counter-label">Segundos</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>Con <span class="heart">❤️</span> para Mateo</footer>
+
+    <script>
+      // Fecha de nacimiento de Mateo
+      const birthDate = new Date(2025, 3, 16, 15, 30); // Mes es 0-indexado (abril = 3)
+
+      // Valores anteriores para detectar cambios
+      let prevValues = {
+        years: -1,
+        months: -1,
+        days: -1,
+        hours: -1,
+        minutes: -1,
+        seconds: -1,
+      };
+
+      function updateAge() {
+        const now = new Date();
+
+        // Si la fecha actual es anterior a la fecha de nacimiento, mostrar ceros
+        if (now < birthDate) {
+          document.getElementById("years").textContent = "0";
+          document.getElementById("months").textContent = "0";
+          document.getElementById("days").textContent = "0";
+          document.getElementById("hours").textContent = "0";
+          document.getElementById("minutes").textContent = "0";
+          document.getElementById("seconds").textContent = "0";
+          return;
+        }
+
+        // Cálculo de la diferencia de tiempo
+        let years = now.getFullYear() - birthDate.getFullYear();
+        let months = now.getMonth() - birthDate.getMonth();
+
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        // Crear una fecha temporal para calcular días
+        let tempDate = new Date(birthDate);
+        tempDate.setFullYear(now.getFullYear());
+        tempDate.setMonth(now.getMonth());
+
+        let days = now.getDate() - tempDate.getDate();
+
+        if (days < 0) {
+          // Obtener el último día del mes anterior
+          const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+          days += lastMonth.getDate();
+          months--;
+
+          if (months < 0) {
+            months += 12;
+            years--;
+          }
+        }
+
+        // Calcular horas, minutos y segundos
+        let hours = now.getHours() - birthDate.getHours();
+        if (hours < 0) {
+          hours += 24;
+          days--;
+        }
+
+        let minutes = now.getMinutes() - birthDate.getMinutes();
+        if (minutes < 0) {
+          minutes += 60;
+          hours--;
+        }
+
+        let seconds = now.getSeconds() - birthDate.getSeconds();
+        if (seconds < 0) {
+          seconds += 60;
+          minutes--;
+        }
+
+        // Actualizar los elementos HTML y añadir animación cuando cambian
+        updateElementWithAnimation("years", years);
+        updateElementWithAnimation("months", months);
+        updateElementWithAnimation("days", days);
+        updateElementWithAnimation("hours", hours);
+        updateElementWithAnimation("minutes", minutes);
+        updateElementWithAnimation("seconds", seconds);
+
+        // Actualizar valores previos
+        prevValues = {
+          years,
+          months,
+          days,
+          hours,
+          minutes,
+          seconds,
+        };
+      }
+
+      function updateElementWithAnimation(id, value) {
+        const element = document.getElementById(id);
+        element.textContent = value;
+
+        // Añadir animación solo si el valor ha cambiado
+        if (prevValues[id] !== value) {
+          element.classList.remove("changed");
+          void element.offsetWidth; // Truco para reiniciar la animación
+          element.classList.add("changed");
+        }
+      }
+
+      // Actualizar la edad cada segundo
+      updateAge();
+      setInterval(updateAge, 1000);
+    </script>
+  </body>
+</html>
