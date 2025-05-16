@@ -1,557 +1,926 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edad de Mateo Antivero</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap">
     <style>
-      :root {
-        --primary-color: #ff9aa2; /* Rosa suave */
-        --secondary-color: #ffdac1; /* Melocotón claro */
-        --accent-color: #b5ead7; /* Verde menta */
-        --accent-color2: #c7ceea; /* Lavanda */
-        --background-color: #fff8f0; /* Crema suave */
-        --text-color: #5d576b; /* Púrpura oscuro */
-        --light-text: #8e7f9d; /* Púrpura claro */
-        --card-bg: #ffffff;
-        --shadow: 0 8px 20px rgba(255, 154, 162, 0.2);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: var(--background-color);
-        color: var(--text-color);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background-image: radial-gradient(
-            circle at 10% 20%,
-            rgba(255, 218, 193, 0.3) 10%,
-            transparent 20%
-          ),
-          radial-gradient(
-            circle at 90% 30%,
-            rgba(181, 234, 215, 0.3) 15%,
-            transparent 25%
-          ),
-          radial-gradient(
-            circle at 30% 70%,
-            rgba(199, 206, 234, 0.3) 12%,
-            transparent 20%
-          ),
-          radial-gradient(
-            circle at 80% 80%,
-            rgba(255, 154, 162, 0.3) 8%,
-            transparent 15%
-          );
-        background-size: 100% 100%;
-        background-attachment: fixed;
-      }
-
-      header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--accent-color2)
-        );
-        color: white;
-        padding: 1.8rem 1rem;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        box-shadow: var(--shadow);
-        z-index: 100;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-      }
-
-      h1 {
-        font-family: "Baloo 2", cursive;
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        letter-spacing: 0.5px;
-      }
-
-      .subtitle {
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.95);
-        font-weight: 400;
-      }
-
-      main {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2.5rem 1rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      /* Elementos decorativos flotantes */
-      .floating {
-        position: absolute;
-        z-index: -1;
-        animation: float 6s ease-in-out infinite;
-        opacity: 0.7;
-      }
-
-      .balloon1 {
-        top: 10%;
-        left: 5%;
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        animation-delay: 0s;
-      }
-
-      .balloon2 {
-        top: 15%;
-        right: 10%;
-        font-size: 3rem;
-        color: var(--accent-color);
-        animation-delay: 1s;
-      }
-
-      .star1 {
-        bottom: 20%;
-        left: 8%;
-        font-size: 2rem;
-        color: var(--accent-color2);
-        animation-delay: 2s;
-      }
-
-      .star2 {
-        bottom: 15%;
-        right: 8%;
-        font-size: 2.5rem;
-        color: var(--secondary-color);
-        animation-delay: 3s;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0) rotate(0deg);
+        :root {
+            /* Colores astrológicos */
+            --aries-color: #FF5757; /* Rojo fuego para Aries */
+            --leo-color: #FFD700; /* Dorado para Leo */
+            --sagitario-color: #9370DB; /* Púrpura para Sagitario */
+            --piscis-color: #64B5F6; /* Azul para Piscis */
+            --escorpio-color: #8E44AD; /* Púrpura oscuro para Escorpio */
+            
+            /* Colores numerológicos */
+            --num5-color: #FF9E80; /* Naranja para el 5 (libertad) */
+            --num11-color: #B39DDB; /* Lavanda para el 11 (intuición) */
+            --num33-color: #81C784; /* Verde para el 33 (servicio) */
+            --num8-color: #4DB6AC; /* Turquesa para el 8 (autoridad) */
+            --num7-color: #9575CD; /* Violeta para el 7 (sabiduría) */
+            
+            --primary-color: var(--aries-color);
+            --secondary-color: var(--leo-color);
+            --accent-color: var(--sagitario-color);
+            --accent-color2: var(--piscis-color);
+            --background-color: #FFF8F0; /* Crema suave */
+            --text-color: #5D576B; /* Púrpura oscuro */
+            --light-text: #8E7F9D; /* Púrpura claro */
+            --card-bg: #ffffff;
+            --shadow: 0 8px 20px rgba(255, 87, 87, 0.2);
         }
-        50% {
-          transform: translateY(-15px) rotate(5deg);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        100% {
-          transform: translateY(0) rotate(0deg);
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 87, 87, 0.15) 10%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(255, 215, 0, 0.15) 15%, transparent 25%),
+                radial-gradient(circle at 30% 70%, rgba(147, 112, 219, 0.15) 12%, transparent 20%),
+                radial-gradient(circle at 80% 80%, rgba(100, 181, 246, 0.15) 8%, transparent 15%);
+            background-size: 100% 100%;
+            background-attachment: fixed;
         }
-      }
 
-      .counter-container {
-        background-color: var(--card-bg);
-        border-radius: 24px;
-        box-shadow: var(--shadow);
-        padding: 2.5rem;
-        width: 100%;
-        max-width: 900px;
-        position: relative;
-        overflow: hidden;
-        border: 8px solid white;
-      }
-
-      .counter-container::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        right: -10px;
-        bottom: -10px;
-        background: linear-gradient(
-          45deg,
-          var(--primary-color),
-          var(--secondary-color),
-          var(--accent-color),
-          var(--accent-color2)
-        );
-        z-index: -1;
-        filter: blur(20px);
-        opacity: 0.15;
-      }
-
-      .counter-title {
-        text-align: center;
-        margin-bottom: 2rem;
-        color: var(--text-color);
-        font-size: 1.6rem;
-        font-family: "Baloo 2", cursive;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-      }
-
-      .counter-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(
-          to right,
-          var(--primary-color),
-          var(--accent-color)
-        );
-        border-radius: 10px;
-      }
-
-      .counter-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1.8rem;
-      }
-
-      .counter-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.2rem 0.8rem;
-        border-radius: 16px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .counter-item:nth-child(1) {
-        background-color: rgba(255, 154, 162, 0.1);
-        border: 2px dashed var(--primary-color);
-      }
-
-      .counter-item:nth-child(2) {
-        background-color: rgba(255, 218, 193, 0.1);
-        border: 2px dashed var(--secondary-color);
-      }
-
-      .counter-item:nth-child(3) {
-        background-color: rgba(181, 234, 215, 0.1);
-        border: 2px dashed var(--accent-color);
-      }
-
-      .counter-item:nth-child(4) {
-        background-color: rgba(199, 206, 234, 0.1);
-        border: 2px dashed var(--accent-color2);
-      }
-
-      .counter-item:nth-child(5) {
-        background-color: rgba(255, 154, 162, 0.1);
-        border: 2px dashed var(--primary-color);
-      }
-
-      .counter-item:nth-child(6) {
-        background-color: rgba(255, 218, 193, 0.1);
-        border: 2px dashed var(--secondary-color);
-      }
-
-      .counter-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .counter-icon {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .counter-value {
-        font-size: 2.8rem;
-        font-weight: bold;
-        font-family: "Baloo 2", cursive;
-        margin-bottom: 0.5rem;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .counter-item:nth-child(1) .counter-value {
-        color: var(--primary-color);
-      }
-      .counter-item:nth-child(2) .counter-value {
-        color: #ff9a76;
-      }
-      .counter-item:nth-child(3) .counter-value {
-        color: #88b04b;
-      }
-      .counter-item:nth-child(4) .counter-value {
-        color: #6b5b95;
-      }
-      .counter-item:nth-child(5) .counter-value {
-        color: #f06292;
-      }
-      .counter-item:nth-child(6) .counter-value {
-        color: #ffa000;
-      }
-
-      .counter-value.changed {
-        animation: pulse 0.5s ease-in-out;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .counter-label {
-        font-size: 1rem;
-        color: var(--light-text);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 600;
-      }
-
-      footer {
-        text-align: center;
-        padding: 1.5rem;
-        background: linear-gradient(
-          135deg,
-          var(--accent-color),
-          var(--accent-color2)
-        );
-        color: white;
-        font-size: 0.95rem;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-      }
-
-      .heart {
-        display: inline-block;
-        color: var(--primary-color);
-        animation: heartbeat 1.5s infinite;
-        margin: 0 5px;
-      }
-
-      @keyframes heartbeat {
-        0% {
-          transform: scale(1);
-        }
-        25% {
-          transform: scale(1.1);
-        }
-        50% {
-          transform: scale(1);
-        }
-        75% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .counter-grid {
-          grid-template-columns: repeat(2, 1fr);
+        header {
+            background: linear-gradient(135deg, var(--aries-color), var(--leo-color));
+            color: white;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
 
         h1 {
-          font-size: 2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .counter-grid {
-          grid-template-columns: 1fr;
-        }
-
-        h1 {
-          font-size: 1.8rem;
+            font-family: 'Baloo 2', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
         }
 
         .subtitle {
-          font-size: 1rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
         }
 
-        .counter-value {
-          font-size: 2.5rem;
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 1rem;
+            position: relative;
+            z-index: 1;
+            gap: 2rem;
+        }
+
+        /* Elementos decorativos flotantes */
+        .floating {
+            position: absolute;
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .astro-symbol {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .num-symbol {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Baloo 2', cursive;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .aries {
+            top: 10%;
+            left: 5%;
+            color: var(--aries-color);
+            animation-delay: 0s;
+        }
+
+        .leo {
+            top: 15%;
+            right: 10%;
+            color: var(--leo-color);
+            animation-delay: 1s;
+        }
+
+        .sagitario {
+            bottom: 20%;
+            left: 8%;
+            color: var(--sagitario-color);
+            animation-delay: 2s;
+        }
+
+        .piscis {
+            bottom: 15%;
+            right: 8%;
+            color: var(--piscis-color);
+            animation-delay: 3s;
+        }
+
+        .num5 {
+            top: 25%;
+            left: 15%;
+            color: var(--num5-color);
+            animation-delay: 1.5s;
+        }
+
+        .num11 {
+            top: 30%;
+            right: 15%;
+            color: var(--num11-color);
+            animation-delay: 2.5s;
+        }
+
+        .num33 {
+            bottom: 30%;
+            left: 20%;
+            color: var(--num33-color);
+            animation-delay: 3.5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @keyframes flame {
+            0% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.05); filter: brightness(1.2); }
+            100% { transform: scale(1); filter: brightness(1); }
         }
 
         .counter-container {
-          padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid white;
         }
-      }
+
+        .counter-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                var(--aries-color), 
+                var(--leo-color), 
+                var(--sagitario-color), 
+                var(--piscis-color));
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.15;
+        }
+
+        .counter-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            font-size: 1.6rem;
+            font-family: 'Baloo 2', cursive;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .counter-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--aries-color), var(--leo-color));
+            border-radius: 10px;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .counter-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.2rem 0.8rem;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counter-item:nth-child(1) {
+            background-color: rgba(255, 87, 87, 0.1);
+            border: 2px dashed var(--aries-color);
+        }
+
+        .counter-item:nth-child(2) {
+            background-color: rgba(255, 215, 0, 0.1);
+            border: 2px dashed var(--leo-color);
+        }
+
+        .counter-item:nth-child(3) {
+            background-color: rgba(147, 112, 219, 0.1);
+            border: 2px dashed var(--sagitario-color);
+        }
+
+        .counter-item:nth-child(4) {
+            background-color: rgba(100, 181, 246, 0.1);
+            border: 2px dashed var(--piscis-color);
+        }
+
+        .counter-item:nth-child(5) {
+            background-color: rgba(255, 87, 87, 0.1);
+            border: 2px dashed var(--aries-color);
+        }
+
+        .counter-item:nth-child(6) {
+            background-color: rgba(255, 215, 0, 0.1);
+            border: 2px dashed var(--leo-color);
+        }
+
+        .counter-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .counter-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .counter-value {
+            font-size: 2.8rem;
+            font-weight: bold;
+            font-family: 'Baloo 2', cursive;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .counter-item:nth-child(1) .counter-value { color: var(--aries-color); }
+        .counter-item:nth-child(2) .counter-value { color: var(--leo-color); }
+        .counter-item:nth-child(3) .counter-value { color: var(--sagitario-color); }
+        .counter-item:nth-child(4) .counter-value { color: var(--piscis-color); }
+        .counter-item:nth-child(5) .counter-value { color: var(--escorpio-color); }
+        .counter-item:nth-child(6) .counter-value { color: var(--aries-color); }
+
+        .counter-value.changed {
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .counter-label {
+            font-size: 1rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Sección de carta astral */
+        .astral-container {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid white;
+        }
+
+        .astral-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-size: 1.6rem;
+            font-family: 'Baloo 2', cursive;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .astral-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--sagitario-color), var(--piscis-color));
+            border-radius: 10px;
+        }
+
+        .astral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .astral-item {
+            padding: 1.2rem;
+            border-radius: 16px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .astral-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .astral-item h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Baloo 2', cursive;
+        }
+
+        .astral-item p {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .astral-item:nth-child(1) {
+            background-color: rgba(255, 87, 87, 0.1);
+            border-left: 4px solid var(--aries-color);
+        }
+
+        .astral-item:nth-child(2) {
+            background-color: rgba(147, 112, 219, 0.1);
+            border-left: 4px solid var(--sagitario-color);
+        }
+
+        .astral-item:nth-child(3) {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--leo-color);
+        }
+
+        .astral-item:nth-child(1) h3 { color: var(--aries-color); }
+        .astral-item:nth-child(2) h3 { color: var(--sagitario-color); }
+        .astral-item:nth-child(3) h3 { color: var(--leo-color); }
+
+        .astral-symbol {
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+
+        .fire-aura {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            opacity: 0.8;
+            animation: flame 3s infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.5));
+        }
+
+        /* Sección de numerología */
+        .numerology-container {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid white;
+        }
+
+        .numerology-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                var(--num5-color), 
+                var(--num11-color), 
+                var(--num33-color), 
+                var(--num8-color),
+                var(--num7-color));
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.15;
+        }
+
+        .numerology-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-size: 1.6rem;
+            font-family: 'Baloo 2', cursive;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .numerology-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--num5-color), var(--num11-color));
+            border-radius: 10px;
+        }
+
+        .numerology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .numerology-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .numerology-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .numerology-item:nth-child(1) {
+            background-color: rgba(255, 158, 128, 0.1);
+            border: 2px solid var(--num5-color);
+        }
+
+        .numerology-item:nth-child(2) {
+            background-color: rgba(179, 157, 219, 0.1);
+            border: 2px solid var(--num11-color);
+        }
+
+        .numerology-item:nth-child(3) {
+            background-color: rgba(129, 199, 132, 0.1);
+            border: 2px solid var(--num33-color);
+        }
+
+        .numerology-item:nth-child(4) {
+            background-color: rgba(77, 182, 172, 0.1);
+            border: 2px solid var(--num8-color);
+        }
+
+        .numerology-item:nth-child(5) {
+            background-color: rgba(149, 117, 205, 0.1);
+            border: 2px solid var(--num7-color);
+        }
+
+        .number-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            font-family: 'Baloo 2', cursive;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .number-circle::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            z-index: 1;
+        }
+
+        .number-circle span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .numerology-item:nth-child(1) .number-circle {
+            background-color: var(--num5-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 158, 128, 0.4);
+        }
+
+        .numerology-item:nth-child(2) .number-circle {
+            background-color: var(--num11-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(179, 157, 219, 0.4);
+        }
+
+        .numerology-item:nth-child(3) .number-circle {
+            background-color: var(--num33-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(129, 199, 132, 0.4);
+        }
+
+        .numerology-item:nth-child(4) .number-circle {
+            background-color: var(--num8-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(77, 182, 172, 0.4);
+        }
+
+        .numerology-item:nth-child(5) .number-circle {
+            background-color: var(--num7-color);
+            color: white;
+            box-shadow: 0 5px 15px rgba(149, 117, 205, 0.4);
+        }
+
+        .numerology-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .numerology-item:nth-child(1) .numerology-name { color: var(--num5-color); }
+        .numerology-item:nth-child(2) .numerology-name { color: var(--num11-color); }
+        .numerology-item:nth-child(3) .numerology-name { color: var(--num33-color); }
+        .numerology-item:nth-child(4) .numerology-name { color: var(--num8-color); }
+        .numerology-item:nth-child(5) .numerology-name { color: var(--num7-color); }
+
+        .numerology-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--light-text);
+        }
+
+        .numerology-highlight {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .master-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: gold;
+            color: #5D4037;
+            font-size: 0.7rem;
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--sagitario-color), var(--piscis-color));
+            color: white;
+            font-size: 0.95rem;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        .heart {
+            display: inline-block;
+            color: var(--aries-color);
+            animation: heartbeat 1.5s infinite;
+            margin: 0 5px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .counter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .astral-grid, .numerology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .counter-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .counter-value {
+                font-size: 2.5rem;
+            }
+            
+            .counter-container, .astral-container, .numerology-container {
+                padding: 1.5rem;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>Edad de Mateo Antivero</h1>
-      <p class="subtitle">Nacido el 16/04/2025 – 15:30</p>
+        <h1>Edad de Mateo Antivero</h1>
+        <p class="subtitle">Nacido el 16/04/2025 – 15:30</p>
     </header>
 
     <main>
-      <!-- Elementos decorativos flotantes -->
-      <div class="floating balloon1">🎈</div>
-      <div class="floating balloon2">🎈</div>
-      <div class="floating star1">⭐</div>
-      <div class="floating star2">✨</div>
-
-      <div class="counter-container">
-        <h2 class="counter-title">Tiempo transcurrido desde su nacimiento</h2>
-        <div class="counter-grid">
-          <div class="counter-item">
-            <div class="counter-icon">🎂</div>
-            <div id="years" class="counter-value">0</div>
-            <div class="counter-label">Años</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-icon">📅</div>
-            <div id="months" class="counter-value">0</div>
-            <div class="counter-label">Meses</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-icon">🌞</div>
-            <div id="days" class="counter-value">0</div>
-            <div class="counter-label">Días</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-icon">⏰</div>
-            <div id="hours" class="counter-value">0</div>
-            <div class="counter-label">Horas</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-icon">⏱️</div>
-            <div id="minutes" class="counter-value">0</div>
-            <div class="counter-label">Minutos</div>
-          </div>
-          <div class="counter-item">
-            <div class="counter-icon">⏲️</div>
-            <div id="seconds" class="counter-value">0</div>
-            <div class="counter-label">Segundos</div>
-          </div>
+        <!-- Elementos decorativos flotantes -->
+        <div class="floating astro-symbol aries">♈</div>
+        <div class="floating astro-symbol leo">♌</div>
+        <div class="floating astro-symbol sagitario">♐</div>
+        <div class="floating astro-symbol piscis">♓</div>
+        <div class="floating num-symbol num5">5</div>
+        <div class="floating num-symbol num11">11</div>
+        <div class="floating num-symbol num33">33</div>
+        
+        <div class="counter-container">
+            <h2 class="counter-title">Tiempo transcurrido desde su nacimiento</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-icon">🎂</div>
+                    <div id="years" class="counter-value">0</div>
+                    <div class="counter-label">Años</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">📅</div>
+                    <div id="months" class="counter-value">0</div>
+                    <div class="counter-label">Meses</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">🌞</div>
+                    <div id="days" class="counter-value">0</div>
+                    <div class="counter-label">Días</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">⏰</div>
+                    <div id="hours" class="counter-value">0</div>
+                    <div class="counter-label">Horas</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">⏱️</div>
+                    <div id="minutes" class="counter-value">0</div>
+                    <div class="counter-label">Minutos</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-icon">⏲️</div>
+                    <div id="seconds" class="counter-value">0</div>
+                    <div class="counter-label">Segundos</div>
+                </div>
+            </div>
         </div>
-      </div>
+        
+        <div class="astral-container">
+            <div class="fire-aura">🔥</div>
+            <h2 class="astral-title">Su Carta Astral</h2>
+            <div class="astral-grid">
+                <div class="astral-item">
+                    <h3><span class="astro-symbol">♈</span> Sol en Aries</h3>
+                    <p>Mateo es un líder natural, lleno de energía y pasión. Su espíritu aventurero lo llevará a iniciar nuevos proyectos con valentía y determinación. Su personalidad es magnética y directa, siempre listo para la acción.</p>
+                </div>
+                <div class="astral-item">
+                    <h3><span class="astro-symbol">♐</span> Luna en Sagitario</h3>
+                    <p>Sus emociones son optimistas y expansivas. Mateo siente una profunda necesidad de explorar, aprender y descubrir el mundo. Su corazón busca libertad y aventuras, con una curiosidad natural por diferentes culturas y filosofías.</p>
+                </div>
+                <div class="astral-item">
+                    <h3><span class="astro-symbol">♌</span> Ascendente Leo</h3>
+                    <p>Mateo se presenta al mundo con carisma y confianza. Su presencia es cálida y magnética, con un estilo personal que no pasa desapercibido. Tiene un brillo natural que atrae a los demás y una creatividad que ilumina todo lo que hace.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="numerology-container">
+            <h2 class="numerology-title">Su Numerología</h2>
+            <div class="numerology-grid">
+                <div class="numerology-item">
+                    <div class="number-circle">
+                        <span>5</span>
+                    </div>
+                    <div class="numerology-name">Número de Expresión</div>
+                    <p class="numerology-desc">
+                        <span class="numerology-highlight">Adaptabilidad y libertad.</span> Mateo tiene un espíritu libre y versátil, con excelentes habilidades comunicativas. Aprenderá rápido y se adaptará a diferentes situaciones con facilidad.
+                    </p>
+                </div>
+                <div class="numerology-item">
+                    <div class="number-circle">
+                        <span>11</span>
+                    </div>
+                    <span class="master-number">Maestro</span>
+                    <div class="numerology-name">Número de Destino</div>
+                    <p class="numerology-desc">
+                        <span class="numerology-highlight">Intuición e inspiración.</span> Su misión es ser un canal de ideas innovadoras. Tiene una sensibilidad especial y capacidad para inspirar a otros con su visión única.
+                    </p>
+                </div>
+                <div class="numerology-item">
+                    <div class="number-circle">
+                        <span>33</span>
+                    </div>
+                    <span class="master-number">Maestro</span>
+                    <div class="numerology-name">Número del Alma</div>
+                    <p class="numerology-desc">
+                        <span class="numerology-highlight">Servicio y compasión.</span> En su corazón, Mateo desea ayudar a los demás. Tiene potencial para el liderazgo compasivo y la capacidad de unir a las personas.
+                    </p>
+                </div>
+                <div class="numerology-item">
+                    <div class="number-circle">
+                        <span>8</span>
+                    </div>
+                    <div class="numerology-name">Número de Personalidad</div>
+                    <p class="numerology-desc">
+                        <span class="numerology-highlight">Autoridad y ambición.</span> Proyecta una imagen de competencia y determinación. Tiene capacidad natural para liderar y alcanzar logros materiales.
+                    </p>
+                </div>
+                <div class="numerology-item">
+                    <div class="number-circle">
+                        <span>7</span>
+                    </div>
+                    <div class="numerology-name">Regalo Divino</div>
+                    <p class="numerology-desc">
+                        <span class="numerology-highlight">Sabiduría e introspección.</span> Su don especial es la inteligencia analítica y la búsqueda de conocimiento profundo. Brillará en áreas que requieran pensamiento profundo.
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>Con <span class="heart">❤️</span> para Mateo</footer>
+    <footer>
+        Con <span class="heart">❤️</span> para Mateo, nuestro pequeño visionario
+    </footer>
 
     <script>
-      // Fecha de nacimiento de Mateo
-      const birthDate = new Date(2025, 3, 16, 15, 30); // Mes es 0-indexado (abril = 3)
-
-      // Valores anteriores para detectar cambios
-      let prevValues = {
-        years: -1,
-        months: -1,
-        days: -1,
-        hours: -1,
-        minutes: -1,
-        seconds: -1,
-      };
-
-      function updateAge() {
-        const now = new Date();
-
-        // Si la fecha actual es anterior a la fecha de nacimiento, mostrar ceros
-        if (now < birthDate) {
-          document.getElementById("years").textContent = "0";
-          document.getElementById("months").textContent = "0";
-          document.getElementById("days").textContent = "0";
-          document.getElementById("hours").textContent = "0";
-          document.getElementById("minutes").textContent = "0";
-          document.getElementById("seconds").textContent = "0";
-          return;
-        }
-
-        // Cálculo de la diferencia de tiempo
-        let years = now.getFullYear() - birthDate.getFullYear();
-        let months = now.getMonth() - birthDate.getMonth();
-
-        if (months < 0) {
-          years--;
-          months += 12;
-        }
-
-        // Crear una fecha temporal para calcular días
-        let tempDate = new Date(birthDate);
-        tempDate.setFullYear(now.getFullYear());
-        tempDate.setMonth(now.getMonth());
-
-        let days = now.getDate() - tempDate.getDate();
-
-        if (days < 0) {
-          // Obtener el último día del mes anterior
-          const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-          days += lastMonth.getDate();
-          months--;
-
-          if (months < 0) {
-            months += 12;
-            years--;
-          }
-        }
-
-        // Calcular horas, minutos y segundos
-        let hours = now.getHours() - birthDate.getHours();
-        if (hours < 0) {
-          hours += 24;
-          days--;
-        }
-
-        let minutes = now.getMinutes() - birthDate.getMinutes();
-        if (minutes < 0) {
-          minutes += 60;
-          hours--;
-        }
-
-        let seconds = now.getSeconds() - birthDate.getSeconds();
-        if (seconds < 0) {
-          seconds += 60;
-          minutes--;
-        }
-
-        // Actualizar los elementos HTML y añadir animación cuando cambian
-        updateElementWithAnimation("years", years);
-        updateElementWithAnimation("months", months);
-        updateElementWithAnimation("days", days);
-        updateElementWithAnimation("hours", hours);
-        updateElementWithAnimation("minutes", minutes);
-        updateElementWithAnimation("seconds", seconds);
-
-        // Actualizar valores previos
-        prevValues = {
-          years,
-          months,
-          days,
-          hours,
-          minutes,
-          seconds,
+        // Fecha de nacimiento de Mateo
+        const birthDate = new Date(2025, 3, 16, 15, 30); // Mes es 0-indexado (abril = 3)
+        
+        // Valores anteriores para detectar cambios
+        let prevValues = {
+            years: -1,
+            months: -1,
+            days: -1,
+            hours: -1,
+            minutes: -1,
+            seconds: -1
         };
-      }
-
-      function updateElementWithAnimation(id, value) {
-        const element = document.getElementById(id);
-        element.textContent = value;
-
-        // Añadir animación solo si el valor ha cambiado
-        if (prevValues[id] !== value) {
-          element.classList.remove("changed");
-          void element.offsetWidth; // Truco para reiniciar la animación
-          element.classList.add("changed");
+        
+        function updateAge() {
+            const now = new Date();
+            
+            // Si la fecha actual es anterior a la fecha de nacimiento, mostrar ceros
+            if (now < birthDate) {
+                document.getElementById('years').textContent = '0';
+                document.getElementById('months').textContent = '0';
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+                return;
+            }
+            
+            // Cálculo de la diferencia de tiempo
+            let years = now.getFullYear() - birthDate.getFullYear();
+            let months = now.getMonth() - birthDate.getMonth();
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            // Crear una fecha temporal para calcular días
+            let tempDate = new Date(birthDate);
+            tempDate.setFullYear(now.getFullYear());
+            tempDate.setMonth(now.getMonth());
+            
+            let days = now.getDate() - tempDate.getDate();
+            
+            if (days < 0) {
+                // Obtener el último día del mes anterior
+                const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += lastMonth.getDate();
+                months--;
+                
+                if (months < 0) {
+                    months += 12;
+                    years--;
+                }
+            }
+            
+            // Calcular horas, minutos y segundos
+            let hours = now.getHours() - birthDate.getHours();
+            if (hours < 0) {
+                hours += 24;
+                days--;
+            }
+            
+            let minutes = now.getMinutes() - birthDate.getMinutes();
+            if (minutes < 0) {
+                minutes += 60;
+                hours--;
+            }
+            
+            let seconds = now.getSeconds() - birthDate.getSeconds();
+            if (seconds < 0) {
+                seconds += 60;
+                minutes--;
+            }
+            
+            // Actualizar los elementos HTML y añadir animación cuando cambian
+            updateElementWithAnimation('years', years);
+            updateElementWithAnimation('months', months);
+            updateElementWithAnimation('days', days);
+            updateElementWithAnimation('hours', hours);
+            updateElementWithAnimation('minutes', minutes);
+            updateElementWithAnimation('seconds', seconds);
+            
+            // Actualizar valores previos
+            prevValues = {
+                years,
+                months,
+                days,
+                hours,
+                minutes,
+                seconds
+            };
         }
-      }
-
-      // Actualizar la edad cada segundo
-      updateAge();
-      setInterval(updateAge, 1000);
+        
+        function updateElementWithAnimation(id, value) {
+            const element = document.getElementById(id);
+            element.textContent = value;
+            
+            // Añadir animación solo si el valor ha cambiado
+            if (prevValues[id] !== value) {
+                element.classList.remove('changed');
+                void element.offsetWidth; // Truco para reiniciar la animación
+                element.classList.add('changed');
+            }
+        }
+        
+        // Actualizar la edad cada segundo
+        updateAge();
+        setInterval(updateAge, 1000);
     </script>
-  </body>
+</body>
 </html>
